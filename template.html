@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+    <!-- Why minify when you can Plaintext? Enjoy some source code! -->
+    <head>
+        <title>{{ title }}</title>
+
+        <!-- Document meta tags, lets scale for all viewports and work with
+             all languages! -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- OpenSearch, you can add this to use the same search operators
+             that are used in SayNo2SEO. 1 less step for a better search! -->
+        <link id="opensearch" title="SayNo2SEO" type="application/opensearchdescription+xml" rel="search" href="opensearch.xml">
+
+        <!-- Favicons, ico for wide support, even works on Netscape! -->
+        <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+
+        <!-- And all your other meta tags for your meta info! -->
+        <meta name="keywords" content="{{ keywords }}">
+        <meta name="description" content="{{ description }}">
+        <meta name="subject" content="{{ description }}">
+        <meta name="language" content="{{ lang }}">
+        <meta name="robots" content="index,follow">
+        <meta name="abstract" content="{{ description }}">
+        <meta name="topic" content="{{ topic }}">
+        <meta name="summary" content="{{ description }}">
+        <meta name="author" content="AssemblyLanguage, assemblylanguage@protonmail.com">
+        <meta name="reply-to" content="AssemblyLanguage">
+
+        <!-- Open Graph meta tags. -->
+        <meta property="og:title" content="{{ title }}">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://sayno2seo.com">
+        <meta property="og:image" content="https://sayno2seo.com/assets/say-no-2-seo-logo-vertical.png">
+        <meta property="og:site_name" content="{{ title }}">
+        <meta property="og:description" content="{{ description }}">
+        <meta property="og:email" content="assemblylanguage@protonmail.com">
+
+        <!-- Twitter Card meta tags. -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="https://sayno2seo.com">
+        <meta name="twitter:title" content="{{ title }}">
+        <meta name="twitter:description" content="{{ description }}">
+        <meta name="twitter:creator" content="">
+        <meta name="twitter:image" content="https://sayno2seo.com/assets/say-no-2-seo-logo-vertical.png"> 
+
+        <style>
+            /**
+             * For smaller viewports, use a vertical version of the logo.
+             */
+            .logo {
+                max-width: 100%;
+            }
+
+            #logo-vertical {
+                display: none;
+            }
+
+            @media screen and (max-width: 400px) {
+                #logo-horizontal {
+                    display: none;
+                }
+
+                #logo-vertical {
+                    display: block;
+                }
+            }
+
+            /** 
+             * For smaller viewports, stretch the search bar to the full width
+             * of the viewport.
+             */
+            #search-input {
+                width: 490px;
+                height: 16px;
+                overflow: hidden;
+                padding-top: 8px;
+                padding-left: 6px;
+            }
+
+            @media screen and (max-width: 500px) {
+                #search-input {
+                    width: 100%;
+                }       
+            }
+
+            /**
+             * CSS for details.
+             */
+            .details-container {
+                display: flex;
+                max-width: 800px;
+                justify-content: center;
+            }
+
+            .details-item {
+                padding-left: 4px;
+                padding-right: 4px;
+            }
+
+            .details-info {
+                text-align: left;
+            }
+
+            /**
+             * CSS for the banners.
+             */
+             .banner-link {
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .banner-image {
+                -ms-interpolation-mode: nearest-neighbor;
+                image-rendering: pixelated;
+                image-rendering: -moz-crisp-edges;
+                image-rendering: crisp-edges;
+            }
+
+            /**
+             * Subset of CSS adapted from 98.css.
+             * 
+             * https://github.com/jdan/98.css/blob/master/LICENSE
+             */
+            body {
+                font-family: Arial, sans-serif;
+            }
+
+            input[type="submit"],
+            button {
+                box-sizing: border-box;
+                border: none;
+                background: #cccccc;
+                box-shadow:
+                    inset -1px -1px #0a0a0a,
+                    inset 1px 1px #ffffff,
+                    inset -2px -2px #808080,
+                    inset 2px 2px #dfdfdf;
+                border-radius: 0;
+                min-width: 75px;
+                min-height: 23px;
+                padding: 0 12px;
+            }
+
+            input[type="submit"]:not(:disabled):active,
+            button:not(:disabled):active {
+                box-shadow:
+                    inset -1px -1px #ffffff,
+                    inset 1px 1px #0a0a0a,
+                    inset -2px -2px #dfdfdf,
+            }
+
+            @media (not(hover)) {
+                input[type="submit"]:not(:disabled):hover,
+                button:not(:disabled):hover {
+                    box-shadow:
+                        inset -1px -1px #ffffff,
+                        inset 1px 1px #0a0a0a,
+                        inset 2px 2px #808080;
+                }
+            }
+
+            input[type="submit"]:focus,
+            button:focus {
+                outline: 1px dotted #000000;
+                outline-offset: -4px;
+            }
+
+            input[type="submit"]::-moz-focus-inner,
+            button::-moz-focus-inner {
+                border: 0;
+            }
+
+            :disabled,
+            :disabled + label {
+                color: #808080;
+                text-shadow: 1px 1px 0 #ffffff;
+            }
+
+            legend {
+                background: #cccccc;
+            }
+
+            label {
+                display: inline-flex;
+                align-items: center;
+            }
+
+            input[type="text"],
+            input[type="password"],
+            input[type="email"],
+            textarea {
+                padding: 3px 4px;
+                border: none;
+                box-shadow:
+                    inset -1px -1px #ffffff,
+                    inset 1px 1px #808080,
+                    inset -2px -2px #dfdfdf,
+                    inset 2px 2px #0a0a0a;
+                background-color: #ffffff;
+                box-sizing: border-box;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                border-radius: 0;
+            }
+
+            textarea {
+                resize: none;
+                min-height: 30px;
+            }
+
+            input[type="text"] {
+                height: 21px;
+                line-height: 2;
+            }
+
+            input[type="text"]:focus,
+            textarea:focus {
+                outline: none;
+            }
+
+            a {
+                color: #0000ff;
+            }
+
+            a:focus {
+                outline: 1px dotted #0000ff;
+            }
+
+            summary:focus {
+                outline: 1px dotted #000000;
+            }
+
+            summary {
+                color: #0000ff;
+                text-decoration: underline;
+            }
+
+            summary:hover {
+                cursor: pointer;
+            }
+
+            details summary::marker,
+            details summary::-webkit-details-marker {
+                display: none;
+                content: "";
+            }
+
+            details[open] summary {
+                color: #551a8b;
+            }
+
+            /**
+             * For older browsers that don't support box-shadows, add a border
+             * and then remove it for newer browsers.
+             */
+            textarea {
+                border: 1px solid #000000;
+            }
+
+            @media screen {
+                textarea {
+                    border: unset;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <div role="banner">
+                <div>
+                    <img
+                        id="logo-horizontal"
+                        class="logo"
+                        src="assets/say-no-2-seo-logo.png"
+                        alt="Say No 2 SEO!"
+                    >
+                    <img
+                        id="logo-vertical"
+                        class="logo"
+                        src="assets/say-no-2-seo-logo-vertical.png"
+                        alt="Say No 2 SEO!"
+                    >
+                </div>
+                <p>
+                    Tired of SEO spam? Google not working well anymore? Type here!
+                </p>
+            </div>
+    
+            <div role="form">
+                <form id="search-form" action="https://www.google.com/search" method="get">
+                    <textarea id="search-input" name="q" autofocus="">
+
+
+-site:pinterest.com -intext:pinterest -site:facebook.com -intext:amazon.com -intext:ebay.com -intext:alibaba.com -intext:shopify.com -intext:rakuten.com
+</textarea>
+                    <br>
+                    <input type="submit" value="Search Here!">
+                </form>
+
+                <script type="text/javascript">
+                    // ^
+                    // |
+                    // +-- See the trick? The textarea is prefilled with the search operators,
+                    //     but hidden from the user through CSS. This way, we won't need JavaScript,
+                    //     Hurray! But, the user may accidentally overwrite the prefill, so for
+                    //     users with JavaScript enabled we'll simply delete it and add in the
+                    //     operators on form submit. Progressive Enhancement FTW!
+                    var searchForm = document.getElementById('search-form');
+                    var searchInput = document.getElementById('search-input');
+
+                    searchInput.value = '';
+
+                    searchForm.onsubmit = function(event) {
+                        var searchInputQuery = searchInput.value;
+                        
+                        searchInput.value = searchInputQuery + '\n\n -site:pinterest.com -intext:pinterest -site:facebook.com -intext:amazon.com -intext:ebay.com -intext:alibaba.com -intext:shopify.com -intext:rakuten.com';
+                    
+                        return true;
+                    };
+
+                    // When pressing enter, submit the form. This is a workaround since I'm using
+                    // a textarea element which newlines on enter.
+                    searchInput.onkeydown = function(event) {
+                        if(event.which === 13) {
+                            event.target.form.dispatchEvent(new Event('submit', {cancelable: true}));
+                            event.preventDefault();
+                        }
+                    }
+
+                    // Fallback to search by HTTP for browsers that aren't connecting via HTTPS.
+                    // If you want to save this page locally as your about:home or about:newtab,
+                    // you should remove this line so it doesn't default to HTTP on file: protocol.
+                    // User agent detection would be more accurate, but is too complicated for this!
+                    if (window.location.protocol != 'https:') {
+                        searchForm.setAttribute('action', 'http://www.google.com/search');
+
+                        // Oh yeah, and while we're here, might as well update the open search to
+                        // an HTTP version too.
+                        var openSearchElement = document.getElementById('opensearch');
+                        openSearchElement.setAttribute('href', 'opensearch-http.xml');
+                    }
+
+                    // Fallback if autofocus attribute isn't supported.
+                    searchInput.focus();
+                </script>
+            </div>
+
+            <br>
+    
+            <!-- Details, details, and more details! -->
+            <div class="details-container" role="region">
+                <div class="details-item">
+                    <details>
+                        <summary>How it works</summary>
+                        <p class="details-info">
+                            Search engines like Google support custom search operators. You
+                            can use these operators to remove SEO spammers, affiliate
+                            linkers, and adtech abusers from your search results!
+                        </p>
+                    </details>
+                </div>
+                <div class="details-item">
+                    <details>
+                        <summary>Browser Extensions</summary>
+                        <p class="details-info">
+                            Want to remove more SEO spam? Try the
+                            <a href="https://github.com/iorate/uBlacklist#readme">uBlacklist browser extension</a>!
+                            This extension removes SEO spam sites from showing on search engine
+                            results pages for many search engines.
+                        </p>
+                    </details>
+                </div>
+                <div class="details-item">
+                    <details>
+                        <summary>
+                            Affiliate Links
+                        </summary>
+        
+                        <p class="details-info">
+                            Oh wait, I have none! Send a letter to my marketing officer,
+                            Devin Null, to join my affiliate program.
+                        </p>
+                    </details>
+                </div>
+            </div>
+            
+            <div role="region">
+                <p>
+                    Like the results? Add the OpenSearch to your browser!
+                </p>
+                <p>
+                    More google search guides <a href="https://gist.github.com/sundowndev/283efaddbcf896ab405488330d1bbc06">here</a>!
+                </p>
+            </div>
+    
+            <!-- Banners, can't go wrong with banners! -->
+            <div role="region">
+                <span>
+                    <img
+                        class="banner-image"
+                        src="assets/proudly-served-statically-banner.png"
+                        alt="Proudly Served Statically."
+                    >
+                </span>
+    
+                <a class="banner-link" href="https://github.com/assemblylanguage/sayno2seo">
+                    <img
+                        class="banner-image"
+                        src="assets/contribute-on-github-banner.png"
+                        alt="Contribute on Github."
+                    >
+                </a>
+    
+                <a class="banner-link" href="https://en.wikipedia.org/wiki/OpenSearch">
+                    <img
+                        class="banner-image"
+                        src="assets/use-open-search-banner.png"
+                        alt="Use Open Search."
+                    >
+                </a>
+
+                <span>
+                    <img
+                        class="banner-image"
+                        src="assets/works-on-netscape-club.gif"
+                        alt="Works on Netscape club."
+                    >
+                </span>
+            </div>
+    
+            <div role="region">
+                <p>
+                    Say No 2 SEO!
+                </p>
+            </div>
+        </center>
+    </body>
+</html>

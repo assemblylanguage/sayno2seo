@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"> 
+  <ShortName>SayNo2SEO!</ShortName> 
+  <Description>Search SayNo2SEO!</Description> 
+  <InputEncoding>UTF-8</InputEncoding> 
+  <Image height="16" width="16" type="image/png">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAABmJLR0QA/wD/AP+gvaeTAAACHklEQVQokV1Rz2sTQRidmf0Rs427IcmaZLNYyxqE2FQ9xuSiNxECooKIWLA3EQ8W8U/w4E0sXgSpHnoRlIIegnoKVJOoB60Qm6hJ07hu20Wzpt1kdnc8JE02eaePYd733vceJISAPZiYlBsdddOwLYtm6JDASkE6EpwALtCDqfLLuf1kNdYuHQpZFsZbLVLYDATo9sKdM9FoFCHU+wZ7Crtdcv5+LVJbTM1IiqLIskxRlLbduvXw/fzZUDabZVl2RKGudUs/f5yDZjweT6fTDMMAAKamnCunmgxjuS31hYhjAQA2OgeCoRBN97cghK5dPK0oysDPkCCL7BGOFIjy9LX2vfHHdvpJeL3eRCIxWDG8AQCQL63NLhQNhofMvqwiXEiFUzNhfsIDRjEk2Lb9rvjp8bN8ruHZ5UTI+qZ5dO9q/ERi0m0JunuwbVtV1c9fVlc+lN9WqDIlR5y/izePH0seHY/VDdu2DcOo19cfvaotreE5uTp/Y1YUxZGjdzrk3w7uzRRF+f3+ZHL6+qWTyLN/o6k1m83B3j6h9rvzIldqtVpDrxBynA9CSMOuaZrjsQLiLK+sVypVt8NC1aK1r7Gw4PP5IIS9x72OAM5vwgcv1TlKjUX8lo0K39p3l95cPrw1eVCWJGk8JYeQQvHj8+WcZiCWC/i8TIAzRYFmGTqTySiKMlAYpoQx1nVd13XDMDDGCCFBECRJ4nne3cN/Jf7qxomnZQ0AAAAASUVORK5CYII=</Image>
+  <Url type="text/html" method="get" template="https://www.google.com/search?q={searchTerms}%3A+-site%3Apinterest.com+-intext%3Apinterest+-site%3Afacebook.com+-intext%3Aamazon.com+-intext%3Aebay.com+-intext%3Aalibaba.com+-intext%3Ashopify.com+-intext%3Arakuten.com%0D%0A%0D%0A+-site%3Apinterest.com+-intext%3Apinterest+-site%3Afacebook.com+-intext%3Aamazon.com+-intext%3Aebay.com+-intext%3Aalibaba.com+-intext%3Ashopify.com+-intext%3Arakuten.com"/>
+</OpenSearchDescription> 
